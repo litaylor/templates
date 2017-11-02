@@ -40,31 +40,34 @@
       }).addTo(usmap);
 
 
-      // Go through data.js, attach values to geoJSON data
-      // for (var i = 0; i < data.length; i++) {
-      //   var tempState = data[i];
-      //   for (var j = 0; j < statesData.features.length; j++) {
-      //     if (tempState.state == statesData.features[j].properties.NAME) {
-      //       statesData.features[j].properties.value=tempState.tps3_rate;
-      //     }
-      //   }
-      // }
+
 
       // Pick color scale and domain
-      // var cscale=pickScale('gray-white-brightOrange');
+      var cscale=pickScale('orange-white-green');
 
       // pickDomain(data, [choice]). [choice] accepts numbers or 'min' or 'max'. number of entries should correspond to number of color steps in pickScale
-      // cscale.domain(pickDomain(statesData.features,[0,0.000000000000001,'max']));
+      cscale.domain(pickDomain(precinctsData.features,[1,8]));
 
       // L.geoJson(statesData).addTo(usmap);
       function  style(feature) {
-        return {
-          fillColor: 'black', //cscale(feature.properties.value),
-          fillOpacity: 0.8,
-          color: 'white',//pickColor('white'),
-          weight: 1.5,
-          opacity: 0.5
-        };
+        if (feature.properties.municipality) {
+          return {
+            fillColor: cscale(feature.properties.municipality.district),
+            fillOpacity: 0.8,
+            color: 'white',
+            weight: 1.5,
+            opacity: 0.5
+          };
+        }
+        else {
+          return {
+            fillColor: 'black',
+            fillOpacity: 0.8,
+            color: 'white',
+            weight: 1.5,
+            opacity: 0.5
+          };
+        }
       }
 
       // for (var i = 0; i < stp.length; i++) {
