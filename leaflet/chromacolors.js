@@ -45,6 +45,9 @@ function pickScale(choice) {
   else if (choice=='green-white-brightOrange') {
     return chroma.scale(['#50a291','white','#FF6400']);
   }
+  else if (choice=='white-brightOrange') {
+    return chroma.scale(['white','#FF6400']);
+  }
 }
 
 function pickDomain (data, choice) {
