@@ -1,0 +1,519 @@
+<script>
+  var officialVotes = [
+    {"precinct_name":101,"baker_total":574,"kriseman_total":753,"total":1327},
+    {"precinct_name":102,"baker_total":285,"kriseman_total":416,"total":701},
+    {"precinct_name":103,"baker_total":171,"kriseman_total":252,"total":423},
+    {"precinct_name":104,"baker_total":307,"kriseman_total":440,"total":747},
+    {"precinct_name":105,"baker_total":529,"kriseman_total":829,"total":1358},
+    {"precinct_name":106,"baker_total":216,"kriseman_total":293,"total":509},
+    {"precinct_name":107,"baker_total":360,"kriseman_total":450,"total":810},
+    {"precinct_name":108,"baker_total":525,"kriseman_total":566,"total":1091},
+    {"precinct_name":109,"baker_total":369,"kriseman_total":427,"total":796},
+    {"precinct_name":110,"baker_total":49,"kriseman_total":101,"total":150},
+    {"precinct_name":111,"baker_total":132,"kriseman_total":172,"total":304},
+    {"precinct_name":112,"baker_total":297,"kriseman_total":359,"total":656},
+    {"precinct_name":113,"baker_total":308,"kriseman_total":224,"total":532},
+    {"precinct_name":114,"baker_total":237,"kriseman_total":193,"total":430},
+    {"precinct_name":115,"baker_total":262,"kriseman_total":172,"total":434},
+    {"precinct_name":116,"baker_total":207,"kriseman_total":267,"total":474},
+    {"precinct_name":117,"baker_total":186,"kriseman_total":143,"total":329},
+    {"precinct_name":118,"baker_total":175,"kriseman_total":447,"total":622},
+    {"precinct_name":119,"baker_total":320,"kriseman_total":343,"total":663},
+    {"precinct_name":120,"baker_total":424,"kriseman_total":412,"total":836},
+    {"precinct_name":121,"baker_total":46,"kriseman_total":137,"total":183},
+    {"precinct_name":122,"baker_total":15,"kriseman_total":34,"total":49},
+    {"precinct_name":123,"baker_total":574,"kriseman_total":1108,"total":1682},
+    {"precinct_name":125,"baker_total":196,"kriseman_total":430,"total":626},
+    {"precinct_name":126,"baker_total":98,"kriseman_total":133,"total":231},
+    {"precinct_name":127,"baker_total":175,"kriseman_total":701,"total":876},
+    {"precinct_name":128,"baker_total":284,"kriseman_total":615,"total":899},
+    {"precinct_name":129,"baker_total":332,"kriseman_total":675,"total":1007},
+    {"precinct_name":130,"baker_total":750,"kriseman_total":856,"total":1606},
+    {"precinct_name":131,"baker_total":217,"kriseman_total":213,"total":430},
+    {"precinct_name":132,"baker_total":193,"kriseman_total":196,"total":389},
+    {"precinct_name":133,"baker_total":251,"kriseman_total":286,"total":537},
+    {"precinct_name":134,"baker_total":172,"kriseman_total":446,"total":618},
+    {"precinct_name":135,"baker_total":775,"kriseman_total":1157,"total":1932},
+    {"precinct_name":136,"baker_total":457,"kriseman_total":521,"total":978},
+    {"precinct_name":137,"baker_total":333,"kriseman_total":427,"total":760},
+    {"precinct_name":138,"baker_total":990,"kriseman_total":577,"total":1567},
+    {"precinct_name":139,"baker_total":282,"kriseman_total":280,"total":562},
+    {"precinct_name":140,"baker_total":936,"kriseman_total":939,"total":1875},
+    {"precinct_name":141,"baker_total":389,"kriseman_total":611,"total":1000},
+    {"precinct_name":142,"baker_total":639,"kriseman_total":480,"total":1119},
+    {"precinct_name":143,"baker_total":735,"kriseman_total":385,"total":1120},
+    {"precinct_name":144,"baker_total":1176,"kriseman_total":778,"total":1954},
+    {"precinct_name":145,"baker_total":651,"kriseman_total":497,"total":1148},
+    {"precinct_name":146,"baker_total":230,"kriseman_total":222,"total":452},
+    {"precinct_name":147,"baker_total":230,"kriseman_total":166,"total":396},
+    {"precinct_name":150,"baker_total":571,"kriseman_total":487,"total":1058},
+    {"precinct_name":151,"baker_total":298,"kriseman_total":252,"total":550},
+    {"precinct_name":152,"baker_total":328,"kriseman_total":292,"total":620},
+    {"precinct_name":153,"baker_total":889,"kriseman_total":676,"total":1565},
+    {"precinct_name":154,"baker_total":447,"kriseman_total":238,"total":685},
+    {"precinct_name":155,"baker_total":650,"kriseman_total":553,"total":1203},
+    {"precinct_name":156,"baker_total":539,"kriseman_total":479,"total":1018},
+    {"precinct_name":157,"baker_total":157,"kriseman_total":143,"total":300},
+    {"precinct_name":161,"baker_total":293,"kriseman_total":399,"total":692},
+    {"precinct_name":162,"baker_total":364,"kriseman_total":506,"total":870},
+    {"precinct_name":165,"baker_total":0,"kriseman_total":0,"total":0},
+    {"precinct_name":200,"baker_total":571,"kriseman_total":328,"total":899},
+    {"precinct_name":201,"baker_total":613,"kriseman_total":526,"total":1139},
+    {"precinct_name":202,"baker_total":669,"kriseman_total":484,"total":1153},
+    {"precinct_name":203,"baker_total":240,"kriseman_total":216,"total":456},
+    {"precinct_name":204,"baker_total":124,"kriseman_total":77,"total":201},
+    {"precinct_name":205,"baker_total":246,"kriseman_total":217,"total":463},
+    {"precinct_name":211,"baker_total":153,"kriseman_total":145,"total":298},
+    {"precinct_name":213,"baker_total":187,"kriseman_total":247,"total":434},
+    {"precinct_name":215,"baker_total":463,"kriseman_total":231,"total":694},
+    {"precinct_name":216,"baker_total":428,"kriseman_total":471,"total":899},
+    {"precinct_name":217,"baker_total":1,"kriseman_total":1,"total":2},
+    {"precinct_name":219,"baker_total":237,"kriseman_total":304,"total":541},
+    {"precinct_name":220,"baker_total":157,"kriseman_total":292,"total":449},
+    {"precinct_name":221,"baker_total":310,"kriseman_total":398,"total":708},
+    {"precinct_name":222,"baker_total":747,"kriseman_total":788,"total":1535},
+    {"precinct_name":223,"baker_total":15,"kriseman_total":35,"total":50},
+    {"precinct_name":224,"baker_total":190,"kriseman_total":196,"total":386},
+    {"precinct_name":225,"baker_total":249,"kriseman_total":435,"total":684},
+    {"precinct_name":226,"baker_total":150,"kriseman_total":158,"total":308},
+    {"precinct_name":227,"baker_total":291,"kriseman_total":344,"total":635},
+    {"precinct_name":228,"baker_total":102,"kriseman_total":232,"total":334},
+    {"precinct_name":229,"baker_total":407,"kriseman_total":401,"total":808},
+    {"precinct_name":230,"baker_total":455,"kriseman_total":313,"total":768},
+    {"precinct_name":231,"baker_total":577,"kriseman_total":557,"total":1134},
+    {"precinct_name":232,"baker_total":495,"kriseman_total":432,"total":927},
+    {"precinct_name":233,"baker_total":323,"kriseman_total":390,"total":713},
+    {"precinct_name":234,"baker_total":292,"kriseman_total":252,"total":544},
+    {"precinct_name":235,"baker_total":468,"kriseman_total":430,"total":898},
+    {"precinct_name":236,"baker_total":51,"kriseman_total":49,"total":100},
+    {"precinct_name":237,"baker_total":30,"kriseman_total":30,"total":60},
+    {"precinct_name":239,"baker_total":547,"kriseman_total":579,"total":1126},
+    {"precinct_name":240,"baker_total":358,"kriseman_total":275,"total":633},
+    {"precinct_name":241,"baker_total":454,"kriseman_total":408,"total":862},
+    {"precinct_name":275,"baker_total":146,"kriseman_total":136,"total":282}
+  ];
+  for (var i = 0; i < precinctsData.features.length; i++) {
+    precinctsData.features[i].properties.primaryVotes={}
+  }
+  for (var i = 0; i < officialVotes.length; i++) {
+    for (var j = 0; j < precinctsData.features.length; j++) {
+      if (officialVotes[i].precinct_name.toString() === precinctsData.features[j].properties.PRECINCTID) {
+        precinctsData.features[j].properties.primaryVotes = officialVotes[i];
+      }
+    }
+  }
+  var map1 = L.map('map1', {
+    zoomSnap: 0.25
+  }).setView([27.812390, -82.749999], 10.75);
+
+  L.tileLayer('https://api.mapbox.com/styles/v1/ltaylor11/cj9okho5d4hj92roaopd3wksn/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoibHRheWxvcjExIiwiYSI6ImNqOWhndGV0cjJ6ZmIyeHBhMzVqbG42d2kifQ.PDNpdxh13YZxmaQWEqQTSg', {
+    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>'
+  }).addTo(map1);
+
+  var cscale=chroma.scale(['#C90000','white','#025480']).domain([0,0.5,1]);
+
+  function  style(feature) {
+    if (feature.properties.municipality) {
+      var kriseShare = Number(feature.properties.primaryVotes.kriseman_total) / (Number(feature.properties.primaryVotes.kriseman_total) + Number(feature.properties.primaryVotes.baker_total));
+      return {
+        fillColor: cscale(kriseShare),
+        fillOpacity: 0.8,
+        color: '#555555',
+        weight: 1.5,
+        opacity: 0.4
+      };
+    }
+    else {
+      return {
+        fillColor: '#aaaaaa',
+        fillOpacity: 0,
+        color: 'white',
+        weight: 1.5,
+        opacity: 0
+      };
+    }
+  }
+
+  function onEachFeatureMargin(feature, layer) {
+    var winner;
+    if (feature.properties.primaryVotes.kriseman_total > feature.properties.primaryVotes.baker_total) {
+      winner = '<b style="color:#025480; font-size:125%; line-height:2;">Kriseman'+': '+(100*((Number(feature.properties.primaryVotes.kriseman_total)/(Number(feature.properties.primaryVotes.baker_total)+Number(feature.properties.primaryVotes.kriseman_total))))).toFixed(2)+'%</b>';
+    }
+    else if (feature.properties.primaryVotes.kriseman_total < feature.properties.primaryVotes.baker_total) {
+      winner = '<b style="color:#C90000; font-size:125%; line-height:2;">Baker'+': '+(100*((Number(feature.properties.primaryVotes.baker_total)/(Number(feature.properties.primaryVotes.baker_total)+Number(feature.properties.primaryVotes.kriseman_total))))).toFixed(2)+'%</b>';
+    }
+    else {
+      winner = 'Tie';
+    }
+    layer.bindTooltip(
+      '<b>Precint '+feature.properties.PRECINCTID+'</b> <br />'+
+      winner+'<br />'+
+      '<span style="padding-left: 4px; border-left:4px solid #025480">Rick Kriseman: '+feature.properties.primaryVotes.kriseman_total+'</span><br /> <span style="padding-left: 4px; border-left:4px solid #C90000">Rick Baker: '+feature.properties.primaryVotes.baker_total+'</span>'
+    );
+  }
+  L.geoJson(precinctsData.features, {
+    style: style,
+    onEachFeature: onEachFeatureMargin
+  }).addTo(map1);
+
+</script>
+<script>
+  var turnoutData = [
+    {"Precinct":101,"Ballots Cast":1333,"Active Registered Voters":3648,"Turnout":"36.54 %"},
+    {"Precinct":102,"Ballots Cast":703,"Active Registered Voters":1755,"Turnout":"40.06 %"},
+    {"Precinct":103,"Ballots Cast":423,"Active Registered Voters":690,"Turnout":"61.30 %"},
+    {"Precinct":104,"Ballots Cast":749,"Active Registered Voters":1714,"Turnout":"43.70 %"},
+    {"Precinct":105,"Ballots Cast":1363,"Active Registered Voters":3554,"Turnout":"38.35 %"},
+    {"Precinct":106,"Ballots Cast":513,"Active Registered Voters":769,"Turnout":"66.71 %"},
+    {"Precinct":107,"Ballots Cast":811,"Active Registered Voters":1818,"Turnout":"44.61 %"},
+    {"Precinct":108,"Ballots Cast":1092,"Active Registered Voters":2741,"Turnout":"39.84 %"},
+    {"Precinct":109,"Ballots Cast":804,"Active Registered Voters":2209,"Turnout":"36.40 %"},
+    {"Precinct":110,"Ballots Cast":154,"Active Registered Voters":274,"Turnout":"56.20 %"},
+    {"Precinct":111,"Ballots Cast":304,"Active Registered Voters":541,"Turnout":"56.19 %"},
+    {"Precinct":112,"Ballots Cast":662,"Active Registered Voters":1310,"Turnout":"50.53 %"},
+    {"Precinct":113,"Ballots Cast":534,"Active Registered Voters":1524,"Turnout":"35.04 %"},
+    {"Precinct":114,"Ballots Cast":432,"Active Registered Voters":1296,"Turnout":"33.33 %"},
+    {"Precinct":115,"Ballots Cast":435,"Active Registered Voters":1350,"Turnout":"32.22 %"},
+    {"Precinct":116,"Ballots Cast":476,"Active Registered Voters":1527,"Turnout":"31.17 %"},
+    {"Precinct":117,"Ballots Cast":330,"Active Registered Voters":1263,"Turnout":"26.13 %"},
+    {"Precinct":118,"Ballots Cast":625,"Active Registered Voters":1290,"Turnout":"48.45 %"},
+    {"Precinct":119,"Ballots Cast":667,"Active Registered Voters":2714,"Turnout":"24.58 %"},
+    {"Precinct":120,"Ballots Cast":841,"Active Registered Voters":3036,"Turnout":"27.70 %"},
+    {"Precinct":121,"Ballots Cast":185,"Active Registered Voters":704,"Turnout":"26.28 %"},
+    {"Precinct":122,"Ballots Cast":49,"Active Registered Voters":264,"Turnout":"18.56 %"},
+    {"Precinct":123,"Ballots Cast":1690,"Active Registered Voters":3625,"Turnout":"46.62 %"},
+    {"Precinct":125,"Ballots Cast":630,"Active Registered Voters":1593,"Turnout":"39.55 %"},
+    {"Precinct":126,"Ballots Cast":234,"Active Registered Voters":792,"Turnout":"29.55 %"},
+    {"Precinct":127,"Ballots Cast":880,"Active Registered Voters":1743,"Turnout":"50.49 %"},
+    {"Precinct":128,"Ballots Cast":904,"Active Registered Voters":2485,"Turnout":"36.38 %"},
+    {"Precinct":129,"Ballots Cast":1011,"Active Registered Voters":2536,"Turnout":"39.87 %"},
+    {"Precinct":130,"Ballots Cast":1614,"Active Registered Voters":3107,"Turnout":"51.95 %"},
+    {"Precinct":131,"Ballots Cast":431,"Active Registered Voters":1400,"Turnout":"30.79 %"},
+    {"Precinct":132,"Ballots Cast":390,"Active Registered Voters":1541,"Turnout":"25.31 %"},
+    {"Precinct":133,"Ballots Cast":541,"Active Registered Voters":1628,"Turnout":"33.23 %"},
+    {"Precinct":134,"Ballots Cast":621,"Active Registered Voters":1527,"Turnout":"40.67 %"},
+    {"Precinct":135,"Ballots Cast":1944,"Active Registered Voters":3471,"Turnout":"56.01 %"},
+    {"Precinct":136,"Ballots Cast":982,"Active Registered Voters":1811,"Turnout":"54.22 %"},
+    {"Precinct":137,"Ballots Cast":764,"Active Registered Voters":1519,"Turnout":"50.30 %"},
+    {"Precinct":138,"Ballots Cast":1570,"Active Registered Voters":2755,"Turnout":"56.99 %"},
+    {"Precinct":139,"Ballots Cast":567,"Active Registered Voters":1750,"Turnout":"32.40 %"},
+    {"Precinct":140,"Ballots Cast":1883,"Active Registered Voters":4665,"Turnout":"40.36 %"},
+    {"Precinct":141,"Ballots Cast":1003,"Active Registered Voters":2118,"Turnout":"47.36 %"},
+    {"Precinct":142,"Ballots Cast":1127,"Active Registered Voters":2324,"Turnout":"48.49 %"},
+    {"Precinct":143,"Ballots Cast":1121,"Active Registered Voters":2173,"Turnout":"51.59 %"},
+    {"Precinct":144,"Ballots Cast":1966,"Active Registered Voters":3919,"Turnout":"50.17 %"},
+    {"Precinct":145,"Ballots Cast":1150,"Active Registered Voters":1839,"Turnout":"62.53 %"},
+    {"Precinct":146,"Ballots Cast":454,"Active Registered Voters":1180,"Turnout":"38.47 %"},
+    {"Precinct":147,"Ballots Cast":400,"Active Registered Voters":1150,"Turnout":"34.78 %"},
+    {"Precinct":148,"Ballots Cast":753,"Active Registered Voters":5147,"Turnout":"14.63 %"},
+    {"Precinct":149,"Ballots Cast":138,"Active Registered Voters":1033,"Turnout":"13.36 %"},
+    {"Precinct":150,"Ballots Cast":1256,"Active Registered Voters":3887,"Turnout":"32.31 %"},
+    {"Precinct":151,"Ballots Cast":552,"Active Registered Voters":1638,"Turnout":"33.70 %"},
+    {"Precinct":152,"Ballots Cast":622,"Active Registered Voters":1903,"Turnout":"32.69 %"},
+    {"Precinct":153,"Ballots Cast":1576,"Active Registered Voters":4031,"Turnout":"39.10 %"},
+    {"Precinct":154,"Ballots Cast":689,"Active Registered Voters":1131,"Turnout":"60.92 %"},
+    {"Precinct":155,"Ballots Cast":1235,"Active Registered Voters":4329,"Turnout":"28.53 %"},
+    {"Precinct":156,"Ballots Cast":1023,"Active Registered Voters":2459,"Turnout":"41.60 %"},
+    {"Precinct":157,"Ballots Cast":301,"Active Registered Voters":785,"Turnout":"38.34 %"},
+    {"Precinct":158,"Ballots Cast":311,"Active Registered Voters":1674,"Turnout":"18.58 %"},
+    {"Precinct":159,"Ballots Cast":441,"Active Registered Voters":3665,"Turnout":"12.03 %"},
+    {"Precinct":160,"Ballots Cast":1073,"Active Registered Voters":2458,"Turnout":"43.65 %"},
+    {"Precinct":161,"Ballots Cast":696,"Active Registered Voters":3588,"Turnout":"19.40 %"},
+    {"Precinct":162,"Ballots Cast":944,"Active Registered Voters":4994,"Turnout":"18.90 %"},
+    {"Precinct":163,"Ballots Cast":333,"Active Registered Voters":1318,"Turnout":"25.27 %"},
+    {"Precinct":164,"Ballots Cast":3,"Active Registered Voters":76,"Turnout":"3.95 %"},
+    {"Precinct":165,"Ballots Cast":0,"Active Registered Voters":16,"Turnout":"0.00 %"},
+    {"Precinct":200,"Ballots Cast":905,"Active Registered Voters":1679,"Turnout":"53.90 %"},
+    {"Precinct":201,"Ballots Cast":1146,"Active Registered Voters":2462,"Turnout":"46.55 %"},
+    {"Precinct":202,"Ballots Cast":1160,"Active Registered Voters":2100,"Turnout":"55.24 %"},
+    {"Precinct":203,"Ballots Cast":458,"Active Registered Voters":1484,"Turnout":"30.86 %"},
+    {"Precinct":204,"Ballots Cast":202,"Active Registered Voters":758,"Turnout":"26.65 %"},
+    {"Precinct":205,"Ballots Cast":464,"Active Registered Voters":1727,"Turnout":"26.87 %"},
+    {"Precinct":206,"Ballots Cast":179,"Active Registered Voters":977,"Turnout":"18.32 %"},
+    {"Precinct":207,"Ballots Cast":142,"Active Registered Voters":883,"Turnout":"16.08 %"},
+    {"Precinct":208,"Ballots Cast":998,"Active Registered Voters":2979,"Turnout":"33.50 %"},
+    {"Precinct":209,"Ballots Cast":382,"Active Registered Voters":2358,"Turnout":"16.20 %"},
+    {"Precinct":210,"Ballots Cast":361,"Active Registered Voters":1856,"Turnout":"19.45 %"},
+    {"Precinct":211,"Ballots Cast":300,"Active Registered Voters":739,"Turnout":"40.60 %"},
+    {"Precinct":212,"Ballots Cast":224,"Active Registered Voters":942,"Turnout":"23.78 %"},
+    {"Precinct":213,"Ballots Cast":435,"Active Registered Voters":1223,"Turnout":"35.57 %"},
+    {"Precinct":214,"Ballots Cast":1240,"Active Registered Voters":3927,"Turnout":"31.58 %"},
+    {"Precinct":215,"Ballots Cast":700,"Active Registered Voters":1398,"Turnout":"50.07 %"},
+    {"Precinct":216,"Ballots Cast":905,"Active Registered Voters":2132,"Turnout":"42.45 %"},
+    {"Precinct":217,"Ballots Cast":2,"Active Registered Voters":14,"Turnout":"14.29 %"},
+    {"Precinct":218,"Ballots Cast":162,"Active Registered Voters":545,"Turnout":"29.72 %"},
+    {"Precinct":219,"Ballots Cast":542,"Active Registered Voters":1329,"Turnout":"40.78 %"},
+    {"Precinct":220,"Ballots Cast":452,"Active Registered Voters":1076,"Turnout":"42.01 %"},
+    {"Precinct":221,"Ballots Cast":711,"Active Registered Voters":1907,"Turnout":"37.28 %"},
+    {"Precinct":222,"Ballots Cast":1546,"Active Registered Voters":3684,"Turnout":"41.97 %"},
+    {"Precinct":223,"Ballots Cast":50,"Active Registered Voters":113,"Turnout":"44.25 %"},
+    {"Precinct":224,"Ballots Cast":388,"Active Registered Voters":1573,"Turnout":"24.67 %"},
+    {"Precinct":225,"Ballots Cast":685,"Active Registered Voters":1810,"Turnout":"37.85 %"},
+    {"Precinct":226,"Ballots Cast":309,"Active Registered Voters":837,"Turnout":"36.92 %"},
+    {"Precinct":227,"Ballots Cast":637,"Active Registered Voters":2062,"Turnout":"30.89 %"},
+    {"Precinct":228,"Ballots Cast":335,"Active Registered Voters":901,"Turnout":"37.18 %"},
+    {"Precinct":229,"Ballots Cast":811,"Active Registered Voters":2176,"Turnout":"37.27 %"},
+    {"Precinct":230,"Ballots Cast":771,"Active Registered Voters":1643,"Turnout":"46.93 %"},
+    {"Precinct":231,"Ballots Cast":1138,"Active Registered Voters":2954,"Turnout":"38.52 %"},
+    {"Precinct":232,"Ballots Cast":930,"Active Registered Voters":2269,"Turnout":"40.99 %"},
+    {"Precinct":233,"Ballots Cast":715,"Active Registered Voters":1648,"Turnout":"43.39 %"},
+    {"Precinct":234,"Ballots Cast":551,"Active Registered Voters":1593,"Turnout":"34.59 %"},
+    {"Precinct":235,"Ballots Cast":899,"Active Registered Voters":1936,"Turnout":"46.44 %"},
+    {"Precinct":236,"Ballots Cast":421,"Active Registered Voters":2231,"Turnout":"18.87 %"},
+    {"Precinct":237,"Ballots Cast":529,"Active Registered Voters":2249,"Turnout":"23.52 %"},
+    {"Precinct":238,"Ballots Cast":332,"Active Registered Voters":1886,"Turnout":"17.60 %"},
+    {"Precinct":239,"Ballots Cast":1131,"Active Registered Voters":3123,"Turnout":"36.22 %"},
+    {"Precinct":240,"Ballots Cast":635,"Active Registered Voters":1828,"Turnout":"34.74 %"},
+    {"Precinct":241,"Ballots Cast":922,"Active Registered Voters":2188,"Turnout":"42.14 %"},
+    {"Precinct":242,"Ballots Cast":431,"Active Registered Voters":2471,"Turnout":"17.44 %"},
+    {"Precinct":243,"Ballots Cast":237,"Active Registered Voters":1657,"Turnout":"14.30 %"},
+    {"Precinct":244,"Ballots Cast":304,"Active Registered Voters":1772,"Turnout":"17.16 %"},
+    {"Precinct":245,"Ballots Cast":339,"Active Registered Voters":1632,"Turnout":"20.77 %"},
+    {"Precinct":246,"Ballots Cast":257,"Active Registered Voters":1557,"Turnout":"16.51 %"},
+    {"Precinct":247,"Ballots Cast":335,"Active Registered Voters":2534,"Turnout":"13.22 %"},
+    {"Precinct":248,"Ballots Cast":310,"Active Registered Voters":2222,"Turnout":"13.95 %"},
+    {"Precinct":249,"Ballots Cast":120,"Active Registered Voters":902,"Turnout":"13.30 %"},
+    {"Precinct":250,"Ballots Cast":515,"Active Registered Voters":3001,"Turnout":"17.16 %"},
+    {"Precinct":251,"Ballots Cast":412,"Active Registered Voters":2441,"Turnout":"16.88 %"},
+    {"Precinct":252,"Ballots Cast":849,"Active Registered Voters":2136,"Turnout":"39.75 %"},
+    {"Precinct":253,"Ballots Cast":2,"Active Registered Voters":10,"Turnout":"20.00 %"},
+    {"Precinct":254,"Ballots Cast":427,"Active Registered Voters":1352,"Turnout":"31.58 %"},
+    {"Precinct":255,"Ballots Cast":448,"Active Registered Voters":1934,"Turnout":"23.16 %"},
+    {"Precinct":256,"Ballots Cast":295,"Active Registered Voters":1637,"Turnout":"18.02 %"},
+    {"Precinct":257,"Ballots Cast":591,"Active Registered Voters":2712,"Turnout":"21.79 %"},
+    {"Precinct":258,"Ballots Cast":219,"Active Registered Voters":1095,"Turnout":"20.00 %"},
+    {"Precinct":259,"Ballots Cast":911,"Active Registered Voters":6149,"Turnout":"14.82 %"},
+    {"Precinct":260,"Ballots Cast":275,"Active Registered Voters":1530,"Turnout":"17.97 %"},
+    {"Precinct":261,"Ballots Cast":364,"Active Registered Voters":2059,"Turnout":"17.68 %"},
+    {"Precinct":262,"Ballots Cast":0,"Active Registered Voters":0,"Turnout":"0.00 %"},
+    {"Precinct":263,"Ballots Cast":518,"Active Registered Voters":1768,"Turnout":"29.30 %"},
+    {"Precinct":264,"Ballots Cast":39,"Active Registered Voters":298,"Turnout":"13.09 %"},
+    {"Precinct":265,"Ballots Cast":352,"Active Registered Voters":2064,"Turnout":"17.05 %"},
+    {"Precinct":266,"Ballots Cast":896,"Active Registered Voters":3112,"Turnout":"28.79 %"},
+    {"Precinct":267,"Ballots Cast":120,"Active Registered Voters":536,"Turnout":"22.39 %"},
+    {"Precinct":268,"Ballots Cast":381,"Active Registered Voters":1543,"Turnout":"24.69 %"},
+    {"Precinct":269,"Ballots Cast":324,"Active Registered Voters":1759,"Turnout":"18.42 %"},
+    {"Precinct":270,"Ballots Cast":65,"Active Registered Voters":257,"Turnout":"25.29 %"},
+    {"Precinct":271,"Ballots Cast":7,"Active Registered Voters":104,"Turnout":"6.73 %"},
+    {"Precinct":272,"Ballots Cast":181,"Active Registered Voters":1195,"Turnout":"15.15 %"},
+    {"Precinct":273,"Ballots Cast":124,"Active Registered Voters":641,"Turnout":"19.34 %"},
+    {"Precinct":274,"Ballots Cast":326,"Active Registered Voters":2032,"Turnout":"16.04 %"},
+    {"Precinct":275,"Ballots Cast":282,"Active Registered Voters":785,"Turnout":"35.92 %"},
+    {"Precinct":301,"Ballots Cast":453,"Active Registered Voters":1106,"Turnout":"40.96 %"},
+    {"Precinct":302,"Ballots Cast":753,"Active Registered Voters":2258,"Turnout":"33.35 %"},
+    {"Precinct":303,"Ballots Cast":348,"Active Registered Voters":1821,"Turnout":"19.11 %"},
+    {"Precinct":304,"Ballots Cast":214,"Active Registered Voters":1141,"Turnout":"18.76 %"},
+    {"Precinct":305,"Ballots Cast":716,"Active Registered Voters":2717,"Turnout":"26.35 %"},
+    {"Precinct":306,"Ballots Cast":715,"Active Registered Voters":2806,"Turnout":"25.48 %"},
+    {"Precinct":307,"Ballots Cast":815,"Active Registered Voters":3526,"Turnout":"23.11 %"},
+    {"Precinct":308,"Ballots Cast":258,"Active Registered Voters":1136,"Turnout":"22.71 %"},
+    {"Precinct":309,"Ballots Cast":1364,"Active Registered Voters":4703,"Turnout":"29.00 %"},
+    {"Precinct":310,"Ballots Cast":864,"Active Registered Voters":2746,"Turnout":"31.46 %"},
+    {"Precinct":311,"Ballots Cast":441,"Active Registered Voters":1439,"Turnout":"30.65 %"},
+    {"Precinct":312,"Ballots Cast":413,"Active Registered Voters":1479,"Turnout":"27.92 %"},
+    {"Precinct":313,"Ballots Cast":482,"Active Registered Voters":1842,"Turnout":"26.17 %"},
+    {"Precinct":314,"Ballots Cast":314,"Active Registered Voters":1348,"Turnout":"23.29 %"},
+    {"Precinct":315,"Ballots Cast":226,"Active Registered Voters":1276,"Turnout":"17.71 %"},
+    {"Precinct":316,"Ballots Cast":172,"Active Registered Voters":647,"Turnout":"26.58 %"},
+    {"Precinct":317,"Ballots Cast":623,"Active Registered Voters":3106,"Turnout":"20.06 %"},
+    {"Precinct":318,"Ballots Cast":278,"Active Registered Voters":1421,"Turnout":"19.56 %"},
+    {"Precinct":319,"Ballots Cast":84,"Active Registered Voters":364,"Turnout":"23.08 %"},
+    {"Precinct":320,"Ballots Cast":581,"Active Registered Voters":2560,"Turnout":"22.70 %"},
+    {"Precinct":321,"Ballots Cast":337,"Active Registered Voters":1158,"Turnout":"29.10 %"},
+    {"Precinct":322,"Ballots Cast":1215,"Active Registered Voters":5263,"Turnout":"23.09 %"},
+    {"Precinct":323,"Ballots Cast":422,"Active Registered Voters":2073,"Turnout":"20.36 %"},
+    {"Precinct":324,"Ballots Cast":214,"Active Registered Voters":1516,"Turnout":"14.12 %"},
+    {"Precinct":325,"Ballots Cast":624,"Active Registered Voters":2362,"Turnout":"26.42 %"},
+    {"Precinct":326,"Ballots Cast":388,"Active Registered Voters":1670,"Turnout":"23.23 %"},
+    {"Precinct":327,"Ballots Cast":816,"Active Registered Voters":3323,"Turnout":"24.56 %"},
+    {"Precinct":328,"Ballots Cast":612,"Active Registered Voters":1678,"Turnout":"36.47 %"},
+    {"Precinct":329,"Ballots Cast":319,"Active Registered Voters":1831,"Turnout":"17.42 %"},
+    {"Precinct":330,"Ballots Cast":162,"Active Registered Voters":1497,"Turnout":"10.82 %"},
+    {"Precinct":331,"Ballots Cast":343,"Active Registered Voters":3487,"Turnout":"9.84 %"},
+    {"Precinct":332,"Ballots Cast":0,"Active Registered Voters":0,"Turnout":"0.00 %"},
+    {"Precinct":333,"Ballots Cast":307,"Active Registered Voters":1844,"Turnout":"16.65 %"},
+    {"Precinct":334,"Ballots Cast":359,"Active Registered Voters":2112,"Turnout":"17.00 %"},
+    {"Precinct":335,"Ballots Cast":541,"Active Registered Voters":2414,"Turnout":"22.41 %"},
+    {"Precinct":336,"Ballots Cast":549,"Active Registered Voters":2019,"Turnout":"27.19 %"},
+    {"Precinct":337,"Ballots Cast":710,"Active Registered Voters":3320,"Turnout":"21.39 %"},
+    {"Precinct":338,"Ballots Cast":596,"Active Registered Voters":2134,"Turnout":"27.93 %"},
+    {"Precinct":339,"Ballots Cast":496,"Active Registered Voters":2435,"Turnout":"20.37 %"},
+    {"Precinct":340,"Ballots Cast":378,"Active Registered Voters":1819,"Turnout":"20.78 %"},
+    {"Precinct":341,"Ballots Cast":404,"Active Registered Voters":1736,"Turnout":"23.27 %"},
+    {"Precinct":342,"Ballots Cast":578,"Active Registered Voters":1813,"Turnout":"31.88 %"},
+    {"Precinct":343,"Ballots Cast":632,"Active Registered Voters":2227,"Turnout":"28.38 %"},
+    {"Precinct":344,"Ballots Cast":1074,"Active Registered Voters":3501,"Turnout":"30.68 %"},
+    {"Precinct":345,"Ballots Cast":572,"Active Registered Voters":3339,"Turnout":"17.13 %"},
+    {"Precinct":346,"Ballots Cast":345,"Active Registered Voters":2382,"Turnout":"14.48 %"},
+    {"Precinct":347,"Ballots Cast":470,"Active Registered Voters":2476,"Turnout":"18.98 %"},
+    {"Precinct":348,"Ballots Cast":556,"Active Registered Voters":2330,"Turnout":"23.86 %"},
+    {"Precinct":349,"Ballots Cast":666,"Active Registered Voters":2712,"Turnout":"24.56 %"},
+    {"Precinct":350,"Ballots Cast":333,"Active Registered Voters":1741,"Turnout":"19.13 %"},
+    {"Precinct":401,"Ballots Cast":1058,"Active Registered Voters":3273,"Turnout":"32.33 %"},
+    {"Precinct":402,"Ballots Cast":517,"Active Registered Voters":1586,"Turnout":"32.60 %"},
+    {"Precinct":403,"Ballots Cast":566,"Active Registered Voters":1963,"Turnout":"28.83 %"},
+    {"Precinct":404,"Ballots Cast":603,"Active Registered Voters":1821,"Turnout":"33.11 %"},
+    {"Precinct":405,"Ballots Cast":571,"Active Registered Voters":1949,"Turnout":"29.30 %"},
+    {"Precinct":406,"Ballots Cast":533,"Active Registered Voters":1700,"Turnout":"31.35 %"},
+    {"Precinct":407,"Ballots Cast":330,"Active Registered Voters":1305,"Turnout":"25.29 %"},
+    {"Precinct":408,"Ballots Cast":417,"Active Registered Voters":1445,"Turnout":"28.86 %"},
+    {"Precinct":409,"Ballots Cast":320,"Active Registered Voters":1115,"Turnout":"28.70 %"},
+    {"Precinct":415,"Ballots Cast":754,"Active Registered Voters":3309,"Turnout":"22.79 %"},
+    {"Precinct":416,"Ballots Cast":299,"Active Registered Voters":1223,"Turnout":"24.45 %"},
+    {"Precinct":417,"Ballots Cast":408,"Active Registered Voters":1223,"Turnout":"33.36 %"},
+    {"Precinct":418,"Ballots Cast":546,"Active Registered Voters":1840,"Turnout":"29.67 %"},
+    {"Precinct":419,"Ballots Cast":363,"Active Registered Voters":1158,"Turnout":"31.35 %"},
+    {"Precinct":420,"Ballots Cast":923,"Active Registered Voters":3196,"Turnout":"28.88 %"},
+    {"Precinct":421,"Ballots Cast":17,"Active Registered Voters":91,"Turnout":"18.68 %"},
+    {"Precinct":422,"Ballots Cast":403,"Active Registered Voters":1390,"Turnout":"28.99 %"},
+    {"Precinct":500,"Ballots Cast":133,"Active Registered Voters":1445,"Turnout":"9.20 %"},
+    {"Precinct":501,"Ballots Cast":533,"Active Registered Voters":2786,"Turnout":"19.13 %"},
+    {"Precinct":502,"Ballots Cast":417,"Active Registered Voters":2110,"Turnout":"19.76 %"},
+    {"Precinct":503,"Ballots Cast":353,"Active Registered Voters":1642,"Turnout":"21.50 %"},
+    {"Precinct":504,"Ballots Cast":564,"Active Registered Voters":2681,"Turnout":"21.04 %"},
+    {"Precinct":505,"Ballots Cast":348,"Active Registered Voters":2337,"Turnout":"14.89 %"},
+    {"Precinct":506,"Ballots Cast":541,"Active Registered Voters":2256,"Turnout":"23.98 %"},
+    {"Precinct":507,"Ballots Cast":457,"Active Registered Voters":2006,"Turnout":"22.78 %"},
+    {"Precinct":508,"Ballots Cast":364,"Active Registered Voters":1699,"Turnout":"21.42 %"},
+    {"Precinct":509,"Ballots Cast":198,"Active Registered Voters":1270,"Turnout":"15.59 %"},
+    {"Precinct":510,"Ballots Cast":287,"Active Registered Voters":2082,"Turnout":"13.78 %"},
+    {"Precinct":511,"Ballots Cast":672,"Active Registered Voters":2976,"Turnout":"22.58 %"},
+    {"Precinct":512,"Ballots Cast":105,"Active Registered Voters":865,"Turnout":"12.14 %"},
+    {"Precinct":513,"Ballots Cast":926,"Active Registered Voters":2339,"Turnout":"39.59 %"},
+    {"Precinct":514,"Ballots Cast":679,"Active Registered Voters":2247,"Turnout":"30.22 %"},
+    {"Precinct":515,"Ballots Cast":890,"Active Registered Voters":2454,"Turnout":"36.27 %"},
+    {"Precinct":516,"Ballots Cast":487,"Active Registered Voters":3351,"Turnout":"14.53 %"},
+    {"Precinct":517,"Ballots Cast":290,"Active Registered Voters":2123,"Turnout":"13.66 %"},
+    {"Precinct":518,"Ballots Cast":838,"Active Registered Voters":4741,"Turnout":"17.68 %"},
+    {"Precinct":519,"Ballots Cast":520,"Active Registered Voters":2870,"Turnout":"18.12 %"},
+    {"Precinct":520,"Ballots Cast":299,"Active Registered Voters":1061,"Turnout":"28.18 %"},
+    {"Precinct":521,"Ballots Cast":471,"Active Registered Voters":2059,"Turnout":"22.88 %"},
+    {"Precinct":522,"Ballots Cast":1121,"Active Registered Voters":3883,"Turnout":"28.87 %"},
+    {"Precinct":523,"Ballots Cast":679,"Active Registered Voters":1943,"Turnout":"34.95 %"},
+    {"Precinct":524,"Ballots Cast":180,"Active Registered Voters":1168,"Turnout":"15.41 %"},
+    {"Precinct":525,"Ballots Cast":327,"Active Registered Voters":958,"Turnout":"34.13 %"},
+    {"Precinct":526,"Ballots Cast":1102,"Active Registered Voters":5189,"Turnout":"21.24 %"},
+    {"Precinct":527,"Ballots Cast":505,"Active Registered Voters":2713,"Turnout":"18.61 %"},
+    {"Precinct":528,"Ballots Cast":341,"Active Registered Voters":1949,"Turnout":"17.50 %"},
+    {"Precinct":529,"Ballots Cast":603,"Active Registered Voters":1954,"Turnout":"30.86 %"},
+    {"Precinct":530,"Ballots Cast":649,"Active Registered Voters":2820,"Turnout":"23.01 %"},
+    {"Precinct":531,"Ballots Cast":488,"Active Registered Voters":2767,"Turnout":"17.64 %"},
+    {"Precinct":532,"Ballots Cast":472,"Active Registered Voters":1951,"Turnout":"24.19 %"},
+    {"Precinct":533,"Ballots Cast":464,"Active Registered Voters":1944,"Turnout":"23.87 %"},
+    {"Precinct":534,"Ballots Cast":690,"Active Registered Voters":2315,"Turnout":"29.81 %"},
+    {"Precinct":535,"Ballots Cast":790,"Active Registered Voters":3531,"Turnout":"22.37 %"},
+    {"Precinct":536,"Ballots Cast":556,"Active Registered Voters":2797,"Turnout":"19.88 %"},
+    {"Precinct":537,"Ballots Cast":740,"Active Registered Voters":3624,"Turnout":"20.42 %"},
+    {"Precinct":538,"Ballots Cast":1363,"Active Registered Voters":4952,"Turnout":"27.52 %"},
+    {"Precinct":539,"Ballots Cast":613,"Active Registered Voters":2867,"Turnout":"21.38 %"},
+    {"Precinct":540,"Ballots Cast":1072,"Active Registered Voters":5136,"Turnout":"20.87 %"},
+    {"Precinct":541,"Ballots Cast":401,"Active Registered Voters":2185,"Turnout":"18.35 %"},
+    {"Precinct":542,"Ballots Cast":978,"Active Registered Voters":4510,"Turnout":"21.69 %"},
+    {"Precinct":543,"Ballots Cast":404,"Active Registered Voters":2154,"Turnout":"18.76 %"},
+    {"Precinct":544,"Ballots Cast":596,"Active Registered Voters":3301,"Turnout":"18.06 %"},
+    {"Precinct":545,"Ballots Cast":260,"Active Registered Voters":1423,"Turnout":"18.27 %"},
+    {"Precinct":600,"Ballots Cast":0,"Active Registered Voters":5,"Turnout":"0.00 %"},
+    {"Precinct":601,"Ballots Cast":795,"Active Registered Voters":4513,"Turnout":"17.62 %"},
+    {"Precinct":602,"Ballots Cast":580,"Active Registered Voters":2584,"Turnout":"22.45 %"},
+    {"Precinct":603,"Ballots Cast":587,"Active Registered Voters":2567,"Turnout":"22.87 %"},
+    {"Precinct":604,"Ballots Cast":208,"Active Registered Voters":768,"Turnout":"27.08 %"},
+    {"Precinct":605,"Ballots Cast":182,"Active Registered Voters":1893,"Turnout":"9.61 %"},
+    {"Precinct":606,"Ballots Cast":532,"Active Registered Voters":2271,"Turnout":"23.43 %"},
+    {"Precinct":607,"Ballots Cast":318,"Active Registered Voters":2202,"Turnout":"14.44 %"},
+    {"Precinct":608,"Ballots Cast":534,"Active Registered Voters":1936,"Turnout":"27.58 %"},
+    {"Precinct":609,"Ballots Cast":336,"Active Registered Voters":1866,"Turnout":"18.01 %"},
+    {"Precinct":610,"Ballots Cast":326,"Active Registered Voters":1662,"Turnout":"19.61 %"},
+    {"Precinct":611,"Ballots Cast":694,"Active Registered Voters":2489,"Turnout":"27.88 %"},
+    {"Precinct":612,"Ballots Cast":513,"Active Registered Voters":2111,"Turnout":"24.30 %"},
+    {"Precinct":613,"Ballots Cast":277,"Active Registered Voters":1443,"Turnout":"19.20 %"},
+    {"Precinct":614,"Ballots Cast":863,"Active Registered Voters":3491,"Turnout":"24.72 %"},
+    {"Precinct":615,"Ballots Cast":659,"Active Registered Voters":2764,"Turnout":"23.84 %"},
+    {"Precinct":616,"Ballots Cast":741,"Active Registered Voters":3089,"Turnout":"23.99 %"},
+    {"Precinct":617,"Ballots Cast":951,"Active Registered Voters":3708,"Turnout":"25.65 %"},
+    {"Precinct":618,"Ballots Cast":387,"Active Registered Voters":1376,"Turnout":"28.13 %"},
+    {"Precinct":619,"Ballots Cast":475,"Active Registered Voters":1657,"Turnout":"28.67 %"},
+    {"Precinct":620,"Ballots Cast":473,"Active Registered Voters":2831,"Turnout":"16.71 %"},
+    {"Precinct":621,"Ballots Cast":475,"Active Registered Voters":2817,"Turnout":"16.86 %"},
+    {"Precinct":622,"Ballots Cast":712,"Active Registered Voters":4147,"Turnout":"17.17 %"},
+    {"Precinct":623,"Ballots Cast":977,"Active Registered Voters":3015,"Turnout":"32.40 %"},
+    {"Precinct":624,"Ballots Cast":287,"Active Registered Voters":1486,"Turnout":"19.31 %"},
+    {"Precinct":625,"Ballots Cast":384,"Active Registered Voters":2255,"Turnout":"17.03 %"},
+    {"Precinct":626,"Ballots Cast":347,"Active Registered Voters":2084,"Turnout":"16.65 %"},
+    {"Precinct":627,"Ballots Cast":1434,"Active Registered Voters":5723,"Turnout":"25.06 %"},
+    {"Precinct":628,"Ballots Cast":283,"Active Registered Voters":1719,"Turnout":"16.46 %"},
+    {"Precinct":629,"Ballots Cast":392,"Active Registered Voters":1840,"Turnout":"21.30 %"},
+    {"Precinct":630,"Ballots Cast":408,"Active Registered Voters":1918,"Turnout":"21.27 %"},
+    {"Precinct":631,"Ballots Cast":558,"Active Registered Voters":2156,"Turnout":"25.88 %"},
+    {"Precinct":632,"Ballots Cast":1208,"Active Registered Voters":3051,"Turnout":"39.59 %"},
+    {"Precinct":633,"Ballots Cast":774,"Active Registered Voters":3686,"Turnout":"21.00 %"},
+    {"Precinct":634,"Ballots Cast":466,"Active Registered Voters":1839,"Turnout":"25.34 %"},
+    {"Precinct":635,"Ballots Cast":689,"Active Registered Voters":2609,"Turnout":"26.41 %"},
+    {"Precinct":636,"Ballots Cast":685,"Active Registered Voters":2506,"Turnout":"27.33 %"},
+    {"Precinct":637,"Ballots Cast":1204,"Active Registered Voters":5349,"Turnout":"22.51 %"},
+    {"Precinct":638,"Ballots Cast":777,"Active Registered Voters":3440,"Turnout":"22.59 %"},
+    {"Precinct":701,"Ballots Cast":952,"Active Registered Voters":4177,"Turnout":"22.79 %"},
+    {"Precinct":702,"Ballots Cast":397,"Active Registered Voters":1873,"Turnout":"21.20 %"},
+    {"Precinct":703,"Ballots Cast":284,"Active Registered Voters":1424,"Turnout":"19.94 %"},
+    {"Precinct":704,"Ballots Cast":430,"Active Registered Voters":2954,"Turnout":"14.56 %"},
+    {"Precinct":705,"Ballots Cast":504,"Active Registered Voters":2506,"Turnout":"20.11 %"},
+    {"Precinct":706,"Ballots Cast":469,"Active Registered Voters":2458,"Turnout":"19.08 %"},
+    {"Precinct":710,"Ballots Cast":139,"Active Registered Voters":639,"Turnout":"21.75 %"},
+    {"Precinct":711,"Ballots Cast":652,"Active Registered Voters":2933,"Turnout":"22.23 %"},
+    {"Precinct":712,"Ballots Cast":537,"Active Registered Voters":3954,"Turnout":"13.58 %"}
+  ];
+
+  var map2 = L.map('map2', {
+    zoomSnap: 0.25
+  }).setView([27.812390, -82.749999], 10.75);
+
+  var cscale2=chroma.scale(['white','#FF6400']).domain([0,0.6]);
+
+  L.tileLayer('https://api.mapbox.com/styles/v1/ltaylor11/cj9okho5d4hj92roaopd3wksn/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoibHRheWxvcjExIiwiYSI6ImNqOWhndGV0cjJ6ZmIyeHBhMzVqbG42d2kifQ.PDNpdxh13YZxmaQWEqQTSg', {
+    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>'
+  }).addTo(map2);
+  for (var i = 0; i < turnoutData.length; i++) {
+    turnoutData[i].Turnout=Number((turnoutData[i].Turnout.substring(0,4))/100);
+    for (var j = 0; j < precinctsData.features.length; j++) {
+      if (turnoutData[i].Precinct.toString() === precinctsData.features[j].properties.PRECINCTID) {
+        precinctsData.features[j].properties.generalVotes = {};
+        precinctsData.features[j].properties.generalVotes.turnout = turnoutData[i].Turnout;
+      }
+    }
+  }
+  function  style(feature) {
+    if (feature.properties.generalVotes) {
+      return {
+        fillColor: cscale2(feature.properties.generalVotes.turnout),
+        fillOpacity: 0.8,
+        color: '#555555',
+        weight: 1.5,
+        opacity: 0.4
+      };
+    }
+    else {
+      return {
+        fillColor: '#aaaaaa',
+        fillOpacity: 0,
+        color: 'white',
+        weight: 1.5,
+        opacity: 0
+      };
+    }
+  }
+
+  function onEachFeatureTurnout(feature, layer) {
+    if (feature.properties.generalVotes) {
+      layer.bindTooltip(
+        '<b>Precint '+feature.properties.PRECINCTID+'</b> <br />'+
+        '<b style="font-size:125%; line-height:2; color:#FF6400">Turnout: '+(100*feature.properties.generalVotes.turnout).toFixed(2)+'%</b> <br />'
+      );
+    }
+  }
+
+  L.geoJson(precinctsData.features, {
+    style: style,
+    onEachFeature: onEachFeatureTurnout
+  }).addTo(map2);
+
+</script>
+<script src = "https://s3.amazonaws.com/tbt-chartwerk/graphic_assets/2017/stpetemayorElection/general-pickup.js"></script>
